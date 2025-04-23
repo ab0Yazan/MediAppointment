@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+    mysql:
+        build:
+            context: .
+            dockerfile: ./Docker/mysql/Dockerfile
+            args:
+                MYSQL_PASSWORD: root
+        restart: unless-stopped
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+
+        volumes:
+            - ./mysqldata:/var/lib/mysql
+            - ./Docker/config/mysql/mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+            - ./Docker/config/mysql/create_database.sql:/docker-entrypoint-initdb.d/create_database.sql
+        ports:
+            - "3306:3306"
+
+    mailhog:
+        image: mailhog/mailhog
+        ports:
+            - "1025:1025" # SMTP
+            - "8025:8025" # Web UI
