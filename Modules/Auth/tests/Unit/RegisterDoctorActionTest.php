@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Notification;
 use Modules\Auth\app\Actions\DoctorRegisterAction;
 use Modules\Auth\app\DataTransferObjects\DoctorDto;
+use Modules\Auth\app\Events\DoctorCreated;
 use Modules\Auth\app\Models\Doctor;
-use Modules\Auth\Events\DoctorCreated;
 use Tests\TestCase;
 
 class RegisterDoctorActionTest extends TestCase

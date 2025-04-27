@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Auth\Events;
+namespace Modules\Auth\app\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;

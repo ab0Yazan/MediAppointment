@@ -22,3 +22,18 @@ services:
         ports:
             - "1025:1025" # SMTP
             - "8025:8025" # Web UI
+
+    laravel.test:
+        image: php:8.3-fpm
+        container_name: laravel.test
+        working_dir: /var/www/html
+        volumes:
+            - ./:/var/www/html
+        ports:
+            - "9000:9000"
+        depends_on:
+            - mysql
+
+        command: >
+            sh -c "adduser --disabled-password --gecos '' sail &&
+                    php-fpm"

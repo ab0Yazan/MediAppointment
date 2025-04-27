@@ -3,8 +3,8 @@
 namespace Modules\Auth\app\Actions;
 
 use Modules\Auth\app\DataTransferObjects\DoctorDto;
+use Modules\Auth\app\Events\DoctorCreated;
 use Modules\Auth\app\Models\Doctor;
-use Modules\Auth\Events\DoctorCreated;
 
 class DoctorRegisterAction
 {

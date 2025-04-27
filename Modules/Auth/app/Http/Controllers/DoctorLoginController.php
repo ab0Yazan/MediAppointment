@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Modules\Auth\app\Actions\DoctorLoginAction;
 use Modules\Auth\Http\Requests\LoginRequest;
 
-class DoctorLoginController extends Controller
+final class DoctorLoginController extends Controller
 {
     public function login(LoginRequest $request, DoctorLoginAction $action)
     {

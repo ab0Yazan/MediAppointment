@@ -3,12 +3,12 @@
 namespace Modules\Auth\app\Actions;
 
 use Modules\Auth\Actions\BaseLoginAction;
-use Modules\Auth\app\Models\Doctor;
+use Modules\Auth\Models\Client;
 
-final class DoctorLoginAction extends BaseLoginAction
+final class ClientLoginAction extends BaseLoginAction
 {
     protected function getUserModel(): string
     {
-        return Doctor::class;
+        return Client::class;
     }
 }
