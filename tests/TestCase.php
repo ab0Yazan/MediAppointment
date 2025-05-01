@@ -9,12 +9,12 @@ use Modules\Auth\app\Models\Doctor;
 
 abstract class TestCase extends BaseTestCase
 {
-    public function createDoctor(): Doctor
+    public function createDoctor($spec="heart", $email="doc@d.com", $name="doc"): Doctor
     {
         return  (new DoctorRegisterAction())->execute(DoctorDto::fromArray([
-            "name" => "John Doe",
-            "email" => "doc1@d.c",
-            "speciality" => "heart",
+            "name" => $name,
+            "email" => $email,
+            "speciality" => $spec,
         ]), "12345678");
     }
 }

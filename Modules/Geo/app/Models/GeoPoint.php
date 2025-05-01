@@ -5,6 +5,9 @@ namespace Modules\Geo\app\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+/**
+ * @method static create(array $array)
+ */
 class GeoPoint extends Model
 {
     use HasFactory;

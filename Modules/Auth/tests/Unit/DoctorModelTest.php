@@ -13,10 +13,10 @@ class DoctorModelTest extends TestCase
     {
         $doctor = $this->createDoctor();
 
-        $longtitude = 20.2645;
+        $longitude = 20.2645;
         $latitude = 31.2357;
-        $geoPoint= $doctor->createGeoPoint($latitude, $longtitude);
+        $geoPoint= $doctor->createGeoPoint($latitude, $longitude);
         $this->assertInstanceOf(GeoPoint::class, $geoPoint);
-        $this->assertDatabaseHas('geo_points', ['longitude' => $longtitude, 'latitude' => $latitude]);
+        $this->assertDatabaseHas('geo_points', ['longitude' => $longitude, 'latitude' => $latitude]);
     }
 }

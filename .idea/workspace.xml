@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b07a5b6e-8d29-464c-8b5a-6fa3863ef54f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Modules/Geo/app/DataTransferObjects/NearestGeoPointDto.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Geo/app/Traits/HasGeoPoint.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Geo/app/ValueObjects/Distance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Geo/app/ValueObjects/GeoPoint.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Auth/app/DataTransferObjects/SearchNearestDoctorDto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Auth/app/Http/Controllers/SearchNearestDoctorController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Geo/app/Actions/SearchNearestModelAction.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Auth/app/Models/Doctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/app/Models/Doctor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules_statuses.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules_statuses.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Auth/tests/Unit/DoctorModelTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/tests/Unit/DoctorModelTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Geo/app/Models/GeoPoint.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Geo/app/Models/GeoPoint.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,10 +245,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "PHPUnit.ClientLoginControllerTest.executor": "Run",
     "PHPUnit.ClientLoginControllerTest.test_login.executor": "Run",
     "PHPUnit.ClientLoginFeatureTest.executor": "Run",
     "PHPUnit.ClientRegisterFeatureTest.test_it_register_client_invalid_request.executor": "Run",
     "PHPUnit.ClientRegisterFeatureTest.test_it_register_client_valid_request.executor": "Run",
+    "PHPUnit.ClientSearchDoctorControllerTest.test_it_search_for_nearest_doctor_by_speciality.executor": "Run",
     "PHPUnit.CreateDoctorScheduleRequestTest.test_create_doctor__valid_request.executor": "Run",
     "PHPUnit.CreateDoctorScheduleRequestTest.test_create_doctor_invalid_request.executor": "Run",
     "PHPUnit.CreateDoctorScheduleRequestTest.test_create_doctor_unique_doctor_id_and_week_day_request.executor": "Run",
@@ -277,10 +279,11 @@
     "PHPUnit.LoginClientActionTest.executor": "Run",
     "PHPUnit.LoginClientActionTest.test_client_login.executor": "Run",
     "PHPUnit.RegisterClientControllerTest.test_client_register.executor": "Run",
+    "PHPUnit.SearchNearestDoctorActionTest.test_search_nearest_doctor.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/yazo/SoftwareE/MediAppointment/Modules/Appointment/app/Actions",
+    "last_opened_file_path": "/home/yazo/SoftwareE/MediAppointment/Modules/Auth/app/DataTransferObjects",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -303,21 +306,17 @@
       <recent name="$PROJECT_DIR$/Docker/config/mysql" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.GeoPointModelTest">
-    <configuration name="DoctorModelTest.test_doctor_create_geo_point" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Modules\Auth\Tests\Unit\DoctorModelTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Auth/tests/Unit/DoctorModelTest.php" method="test_doctor_create_geo_point" scope="Method" />
+  <component name="RunManager" selected="PHPUnit.ClientSearchDoctorControllerTest.test_it_search_for_nearest_doctor_by_speciality">
+    <configuration name="ClientLoginControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Modules\Auth\Tests\Unit\ClientLoginControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Auth/tests/Unit/ClientLoginControllerTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ClientSearchDoctorControllerTest.test_it_search_for_nearest_doctor_by_speciality" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Modules\Auth\Tests\Unit\ClientSearchDoctorControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Auth/tests/Unit/ClientSearchDoctorControllerTest.php" method="test_it_search_for_nearest_doctor_by_speciality" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="GeoPointModelTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Modules\Geo\tests\Unit\GeoPointModelTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Geo/tests/Unit/GeoPointModelTest.php" scope="Class" />
-      <method v="2" />
-    </configuration>
-    <configuration name="GeoPointModelTest.test_geo_point_model_columns" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Modules\Geo\tests\Unit\GeoPointModelTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Geo/tests/Unit/GeoPointModelTest.php" method="test_geo_point_model_columns" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="GeoPointModelTest.test_geo_point_model_unique" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Modules\Geo\tests\Unit\GeoPointModelTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Geo/tests/Unit/GeoPointModelTest.php" method="test_geo_point_model_unique" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="GeoPointModelTest.test_get_nearest_models" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -328,13 +327,17 @@
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
+    <configuration name="SearchNearestDoctorActionTest.test_search_nearest_doctor" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Modules\Auth\Tests\Unit\SearchNearestDoctorActionTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Auth/tests/Unit/SearchNearestDoctorActionTest.php" method="test_search_nearest_doctor" scope="Method" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.ClientSearchDoctorControllerTest.test_it_search_for_nearest_doctor_by_speciality" />
+        <item itemvalue="PHPUnit.SearchNearestDoctorActionTest.test_search_nearest_doctor" />
+        <item itemvalue="PHPUnit.ClientLoginControllerTest" />
         <item itemvalue="PHPUnit.GeoPointModelTest" />
         <item itemvalue="PHPUnit.GeoPointModelTest.test_get_nearest_models" />
-        <item itemvalue="PHPUnit.DoctorModelTest.test_doctor_create_geo_point" />
-        <item itemvalue="PHPUnit.GeoPointModelTest.test_geo_point_model_unique" />
-        <item itemvalue="PHPUnit.GeoPointModelTest.test_geo_point_model_columns" />
       </list>
     </recent_temporary>
   </component>
@@ -361,7 +364,7 @@
       <workItem from="1745706046240" duration="1746000" />
       <workItem from="1745763159522" duration="22560000" />
       <workItem from="1745826292098" duration="6474000" />
-      <workItem from="1745954124261" duration="36904000" />
+      <workItem from="1745954124261" duration="44767000" />
     </task>
     <servers />
   </component>
