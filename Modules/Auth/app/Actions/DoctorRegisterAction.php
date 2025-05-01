@@ -17,6 +17,10 @@ class DoctorRegisterAction
             "password" => bcrypt($password),
         ]);
 
+        if($dto->getGeoPoint()){
+            $doctor->createGeoPoint($dto->getGeoPoint()->getLatitude(), $dto->getGeoPoint()->getLongitude());
+        }
+
         /*** dispatch doctorCreatedEvent ***/
         event(new DoctorCreated($doctor->id));
 

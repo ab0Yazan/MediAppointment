@@ -13,12 +13,17 @@ final class Distance
 
     public function getMeters(): float
     {
-        return $this->meters;
+        return round($this->meters, 1);
     }
 
     public function getKilometers(): float
     {
         return $this->meters / 1000;
+    }
+
+    public function __toString()
+    {
+        return $this->getMeters() . " Meters";
     }
 }
 

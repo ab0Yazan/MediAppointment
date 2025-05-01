@@ -4,6 +4,7 @@ namespace Modules\Auth\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Modules\Auth\app\DataTransferObjects\DoctorDto;
+use Modules\Geo\app\ValueObjects\GeoPoint;
 
 /**
  * @property mixed $password
@@ -21,6 +22,8 @@ class StoreRegisterRequest extends FormRequest
             "password" => "required|string",
             "password_confirmation" => "required|string|same:password",
             "speciality" => "required|string",
+            "latitude" => "nullable|string",
+            "longitude" => "nullable|string",
         ];
     }
 
@@ -40,5 +43,14 @@ class StoreRegisterRequest extends FormRequest
     public function getPassword(): string
     {
         return $this->password;
+    }
+
+    public function getGeoPoint(): GeoPoint|null
+    {
+        if(isset($this->latitude) && isset($this->longitude)) {
+            return new GeoPoint($this->latitude, $this->longitude);
+        }
+
+        return null;
     }
 }

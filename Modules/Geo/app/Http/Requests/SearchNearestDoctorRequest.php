@@ -12,8 +12,8 @@ class SearchNearestDoctorRequest extends FormRequest
     {
         return [
             "speciality" => "nullable|string",
-            "longitude" => "required|float",
-            "latitude" => "required|float",
+            "longitude" => "required|numeric",
+            "latitude" => "required|numeric",
         ];
     }
 

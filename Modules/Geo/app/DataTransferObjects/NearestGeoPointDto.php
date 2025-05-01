@@ -3,21 +3,22 @@
 namespace Modules\Geo\app\DataTransferObjects;
 
 use Illuminate\Database\Eloquent\Model;
+use Modules\Geo\app\ValueObjects\Distance;
 use Modules\Geo\app\ValueObjects\GeoPoint;
 
 class NearestGeoPointDto
 {
-    protected float $distance;
+    protected Distance $distance;
     protected GeoPoint $point;
     protected Model $model;
     public function __construct(float $distance, GeoPoint $point, Model $model)
     {
-        $this->distance = $distance;
+        $this->distance = new Distance($distance);
         $this->point = $point;
         $this->model = $model;
     }
 
-    public function getDistance(): float
+    public function getDistance(): Distance
     {
         return $this->distance;
     }

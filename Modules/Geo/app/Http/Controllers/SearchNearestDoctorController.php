@@ -3,9 +3,9 @@ namespace Modules\Geo\app\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Modules\Auth\app\Models\Doctor;
-use Modules\Auth\Transformers\GetSearchDoctorResource;
 use Modules\Geo\app\Actions\SearchNearestModelAction;
 use Modules\Geo\app\Http\Requests\SearchNearestDoctorRequest;
+use Modules\Geo\app\Transformers\GetSearchDoctorResource;
 
 final class SearchNearestDoctorController
 {
