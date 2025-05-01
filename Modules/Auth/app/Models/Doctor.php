@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Modules\Geo\app\Traits\HasGeoPoint;
 
 
 /**
@@ -16,7 +17,7 @@ use Laravel\Sanctum\HasApiTokens;
 class Doctor extends Authenticatable implements MustVerifyEmail
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, HasApiTokens;
+    use HasFactory, Notifiable, HasApiTokens, HasGeoPoint;
 
     /**
      * The attributes that are mass assignable.

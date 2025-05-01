@@ -1,4 +1,5 @@
 {
     "Auth": true,
-    "Appointment": true
+    "Appointment": true,
+    "Geo": true
 }
