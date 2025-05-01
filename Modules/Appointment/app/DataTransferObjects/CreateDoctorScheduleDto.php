@@ -1,7 +1,9 @@
 <?php
+
 namespace Modules\Appointment\app\DataTransferObjects;
 
 use Modules\Appointment\app\Enums\WeekDay;
+use Modules\Appointment\app\Models\DoctorSchedule;
 
 final class CreateDoctorScheduleDto
 {
@@ -48,6 +50,15 @@ final class CreateDoctorScheduleDto
         );
     }
 
+    public static function fromModel(DoctorSchedule $model): CreateDoctorScheduleDto
+    {
+        return new self(
+            $model->doctor_id,
+            $model->week_day,
+            $model->start_time,
+            $model->end_time
+        );
+    }
 
 
 }

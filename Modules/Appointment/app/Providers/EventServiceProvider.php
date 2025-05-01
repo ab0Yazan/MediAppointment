@@ -3,6 +3,8 @@
 namespace Modules\Appointment\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Modules\Appointment\app\Events\DoctorScheduleCreated;
+use Modules\Appointment\app\Listeners\GenerateScheduleSlot;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -11,7 +13,11 @@ class EventServiceProvider extends ServiceProvider
      *
      * @var array<string, array<int, string>>
      */
-    protected $listen = [];
+    protected $listen = [
+        DoctorScheduleCreated::class => [
+            GenerateScheduleSlot::class,
+        ]
+    ];
 
     /**
      * Indicates if events should be discovered.

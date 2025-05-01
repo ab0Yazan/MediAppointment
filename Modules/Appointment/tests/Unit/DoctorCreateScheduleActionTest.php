@@ -6,7 +6,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Modules\Appointment\app\Actions\CreateDoctorScheduleAction;
 use Modules\Appointment\app\DataTransferObjects\CreateDoctorScheduleDto;
 use Modules\Appointment\app\Enums\WeekDay;
-use Modules\Appointment\Models\DoctorSchedule;
+use Modules\Appointment\app\Exceptions\ScheduleAlreadyExistsException;
+use Modules\Appointment\app\Models\DoctorSchedule;
 use Modules\Auth\app\Actions\DoctorRegisterAction;
 use Modules\Auth\app\DataTransferObjects\DoctorDto;
 use Tests\TestCase;
@@ -14,6 +15,13 @@ use Tests\TestCase;
 class DoctorCreateScheduleActionTest extends TestCase
 {
     use RefreshDatabase;
+
+    private function createSchedule($data): DoctorSchedule
+    {
+        $dto = CreateDoctorScheduleDto::fromArray($data);
+        $action = new CreateDoctorScheduleAction();
+        return $action->execute($dto);
+    }
     public function test_create_schedule(): void
     {
         $doctor= (new DoctorRegisterAction())->execute(DoctorDto::fromArray([
@@ -29,10 +37,28 @@ class DoctorCreateScheduleActionTest extends TestCase
             "end_time" => "17:00",
         ];
 
-        $dto = CreateDoctorScheduleDto::fromArray($data);
-        $action = new CreateDoctorScheduleAction();
-        $schedule= $action->execute($dto);
-        $this->assertInstanceOf(DoctorSchedule::class, $schedule);
+        $schedule= $this->createSchedule($data);
+
         $this->assertDatabaseHas("doctor_schedules", $schedule->getAttributes());
+    }
+
+    public function test_unique_doctor_id_and_week_day()
+    {
+
+        $this->expectException(ScheduleAlreadyExistsException::class);
+
+        $doctor= $this->createDoctor();
+
+        $data = [
+            "doctor_id" => $doctor->id,
+            "week_day" => WeekDay::from('sat'),
+            "start_time" => "09:00",
+            "end_time" => "17:00",
+        ];
+
+        $this->createSchedule($data);
+
+        //same doctor and week day
+        $this->createSchedule($data);
     }
 }

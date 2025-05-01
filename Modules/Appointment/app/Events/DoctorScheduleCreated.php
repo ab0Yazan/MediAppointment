@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Appointment\Events;
+namespace Modules\Appointment\app\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
@@ -17,15 +17,11 @@ class DoctorScheduleCreated
     /**
      * Create a new event instance.
      */
-    public function __construct() {}
+    public function __construct(private readonly int $scheduleId) {}
 
-    /**
-     * Get the channels the event should be broadcast on.
-     */
-    public function broadcastOn(): array
+    public function getScheduleId(): int
     {
-        return [
-            new PrivateChannel('channel-name'),
-        ];
+        return $this->scheduleId;
     }
+
 }

@@ -5,8 +5,7 @@ namespace Modules\Appointment\app\Actions;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 use Illuminate\Support\Facades\DB;
-use Modules\Appointment\Models\DoctorSchedule;
-use Modules\Appointment\Models\Slot;
+use Modules\Appointment\app\Models\DoctorSchedule;
 
 final class AppointmentGenerateSlotAction
 {
