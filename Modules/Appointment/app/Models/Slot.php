@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use Modules\Appointment\Database\Factories\SlotFactory;
 
+/**
+ * @method static updateOrCreate(array $array, array $array1)
+ */
 class Slot extends Model
 {
     use HasFactory;

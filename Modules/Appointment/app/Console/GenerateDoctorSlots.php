@@ -4,6 +4,7 @@ namespace Modules\Appointment\app\Console;
 
 use Carbon\Carbon;
 use Illuminate\Console\Command;
+use Illuminate\Support\Collection;
 use Modules\Appointment\app\Models\DoctorSchedule;
 use Modules\Appointment\app\Models\Slot;
 
@@ -17,9 +18,8 @@ class GenerateDoctorSlots extends Command
 
     // Constants for better readability
     protected const SLOT_DURATION_MINUTES = 30;
-    protected const SLOT_DESCRIPTION = '30min';
 
-    public function handle()
+    public function handle(): void
     {
         $this->generateSlotsForAllDoctors();
         $this->info('Slots generated successfully!');
@@ -52,7 +52,7 @@ class GenerateDoctorSlots extends Command
         ];
     }
 
-    protected function getDoctorSchedules()
+    protected function getDoctorSchedules(): Collection
     {
         $query = DoctorSchedule::with('doctor');
 
@@ -67,7 +67,7 @@ class GenerateDoctorSlots extends Command
     {
         $this->info("Generating slots from {$dateRange['start']->toDateString()} " .
             "to {$dateRange['end']->toDateString()}");
-        $this->info("Processing {$scheduleCount} doctor schedules");
+        $this->info("Processing $scheduleCount doctor schedules");
     }
 
     protected function generateSlotsForSchedule(DoctorSchedule $schedule, Carbon $startDate, Carbon $endDate): void

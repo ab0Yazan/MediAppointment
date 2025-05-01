@@ -6,21 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b07a5b6e-8d29-464c-8b5a-6fa3863ef54f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Appointment/app/Actions/AppointmentGenerateSlotAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Appointment/app/Actions/AppointmentGenerateSlotAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Appointment/app/Actions/CreateDoctorScheduleAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Appointment/app/Actions/CreateDoctorScheduleAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Appointment/app/DataTransferObjects/CreateDoctorScheduleDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Appointment/app/DataTransferObjects/CreateDoctorScheduleDto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Appointment/app/Events/DoctorScheduleCreated.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Appointment/app/Events/DoctorScheduleCreated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Appointment/app/Http/Requests/CreateDoctorScheduleRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Appointment/app/Http/Requests/CreateDoctorScheduleRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Appointment/app/Models/DoctorSchedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Appointment/app/Models/DoctorSchedule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Appointment/app/Models/Slot.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Appointment/app/Models/Slot.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Appointment/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Appointment/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Appointment/database/migrations/2025_04_27_231801_create_doctor_schedules_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Appointment/database/migrations/2025_04_27_231801_create_doctor_schedules_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Appointment/tests/Feature/DoctorScheduleCreateTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Appointment/tests/Feature/DoctorScheduleCreateTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Appointment/tests/Unit/DoctorAppointmentsGenerateSlotActionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Appointment/tests/Unit/DoctorAppointmentsGenerateSlotActionTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Appointment/tests/Unit/DoctorCreateScheduleActionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Appointment/tests/Unit/DoctorCreateScheduleActionTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Appointment/tests/Unit/DoctorScheduleControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Appointment/tests/Unit/DoctorScheduleControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/console.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/console.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +24,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "ab0Yazan"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ab0Yazan/MediAppointment.git",
+    "accountId": "480c7af4-b070-4884-8863-dacee8187891"
+  }
+}]]></component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -348,7 +345,7 @@
       <workItem from="1745706046240" duration="1746000" />
       <workItem from="1745763159522" duration="22560000" />
       <workItem from="1745826292098" duration="6474000" />
-      <workItem from="1745954124261" duration="24631000" />
+      <workItem from="1745954124261" duration="25730000" />
     </task>
     <servers />
   </component>
