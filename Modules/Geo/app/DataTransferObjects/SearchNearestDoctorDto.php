@@ -1,5 +1,5 @@
 <?php
-namespace Modules\Auth\app\DataTransferObjects;
+namespace Modules\Geo\app\DataTransferObjects;
 use Modules\Geo\app\ValueObjects\GeoPoint;
 
 class SearchNearestDoctorDto

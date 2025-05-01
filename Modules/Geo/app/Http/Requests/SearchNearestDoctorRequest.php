@@ -1,9 +1,9 @@
 <?php
 
-namespace Modules\Auth\Http\Requests;
+namespace Modules\Geo\app\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Modules\Auth\app\DataTransferObjects\SearchNearestDoctorDto;
+use Modules\Geo\app\DataTransferObjects\SearchNearestDoctorDto;
 
 class SearchNearestDoctorRequest extends FormRequest
 {

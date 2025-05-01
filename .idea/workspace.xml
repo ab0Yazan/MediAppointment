@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b07a5b6e-8d29-464c-8b5a-6fa3863ef54f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Modules/Auth/app/DataTransferObjects/SearchNearestDoctorDto.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Auth/app/Http/Controllers/SearchNearestDoctorController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Geo/app/Actions/SearchNearestModelAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Auth/tests/Unit/DoctorModelTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/tests/Unit/DoctorModelTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Geo/app/Models/GeoPoint.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Geo/app/Models/GeoPoint.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Auth/app/DataTransferObjects/SearchNearestDoctorDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Geo/app/DataTransferObjects/SearchNearestDoctorDto.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Auth/app/Http/Controllers/SearchNearestDoctorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Geo/app/Http/Controllers/SearchNearestDoctorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Auth/app/Http/Requests/SearchNearestDoctorRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Geo/app/Http/Requests/SearchNearestDoctorRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Auth/tests/Unit/ClientSearchDoctorControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Geo/tests/Unit/ClientSearchDoctorControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Auth/tests/Unit/SearchNearestDoctorActionTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Geo/tests/Unit/SearchNearestDoctorActionTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,7 +362,7 @@
       <workItem from="1745706046240" duration="1746000" />
       <workItem from="1745763159522" duration="22560000" />
       <workItem from="1745826292098" duration="6474000" />
-      <workItem from="1745954124261" duration="44767000" />
+      <workItem from="1745954124261" duration="45165000" />
     </task>
     <servers />
   </component>

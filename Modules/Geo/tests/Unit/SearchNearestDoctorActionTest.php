@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Auth\Tests\Unit;
+namespace Modules\Geo\tests\Unit;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Modules\Auth\app\Models\Doctor;

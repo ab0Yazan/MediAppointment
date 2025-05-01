@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\Auth\Tests\Unit;
+namespace Modules\Geo\tests\Unit;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Modules\Auth\app\Http\Controllers\SearchNearestDoctorController;
-use Modules\Auth\Http\Requests\SearchNearestDoctorRequest;
 use Modules\Geo\app\Actions\SearchNearestModelAction;
+use Modules\Geo\app\Http\Controllers\SearchNearestDoctorController;
+use Modules\Geo\app\Http\Requests\SearchNearestDoctorRequest;
 use Tests\TestCase;
 
 class ClientSearchDoctorControllerTest extends TestCase
