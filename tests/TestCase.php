@@ -3,9 +3,14 @@
 namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Modules\Appointment\app\Actions\CreateDoctorScheduleAction;
+use Modules\Appointment\app\DataTransferObjects\CreateDoctorScheduleDto;
+use Modules\Appointment\app\Enums\WeekDay;
+use Modules\Auth\app\Actions\ClientRegisterAction;
 use Modules\Auth\app\Actions\DoctorRegisterAction;
 use Modules\Auth\app\DataTransferObjects\DoctorDto;
 use Modules\Auth\app\Models\Doctor;
+use Modules\Auth\DataTransferObjects\ClientDto;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -16,5 +21,37 @@ abstract class TestCase extends BaseTestCase
             "email" => $email,
             "speciality" => $spec,
         ]), "12345678");
+    }
+
+    public function createDoctorAndSchedule() : Doctor
+    {
+        $doctor= $this->createDoctor();
+
+        (new CreateDoctorScheduleAction())->execute(CreateDoctorScheduleDto::fromArray([
+            "doctor_id" => $doctor->id,
+            "week_day" => WeekDay::SUN,
+            "start_time" => "09:00",
+            "end_time" => "17:00",
+        ]));
+
+        (new CreateDoctorScheduleAction())->execute(CreateDoctorScheduleDto::fromArray([
+            "doctor_id" => $doctor->id,
+            "week_day" => WeekDay::THU,
+            "start_time" => "09:00",
+            "end_time" => "17:00",
+        ]));
+
+        return $doctor;
+    }
+
+    public function createClient()
+    {
+        return (new ClientRegisterAction())->execute(
+            ClientDto::fromArray([
+                "name" => fake()->name,
+                "email" => fake()->email,
+            ]),
+            "12345678"
+        );
     }
 }

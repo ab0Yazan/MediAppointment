@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b07a5b6e-8d29-464c-8b5a-6fa3863ef54f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Modules/Appointment/app/Actions/GetDoctorSlotsAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Appointment/app/DataTransferObjects/DoctorSlotDto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Appointment/app/Http/Controllers/GetDoctorSlotsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Appointment/tests/Feature/GetDoctorSlotsTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Auth/app/Actions/DoctorRegisterAction.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/app/Actions/DoctorRegisterAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Auth/app/DataTransferObjects/DoctorDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/app/DataTransferObjects/DoctorDto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Auth/app/Http/Requests/StoreRegisterRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/app/Http/Requests/StoreRegisterRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Auth/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Geo/app/DataTransferObjects/NearestGeoPointDto.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Geo/app/DataTransferObjects/NearestGeoPointDto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Geo/app/Http/Requests/SearchNearestDoctorRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Geo/app/Http/Requests/SearchNearestDoctorRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Geo/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Geo/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Appointment/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Appointment/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,6 +276,11 @@
     "PHPUnit.GeoPointTest.test_geo_point_creation.executor": "Run",
     "PHPUnit.GeoPointTest.test_get_distance_from_other_point.executor": "Run",
     "PHPUnit.GeoPointTest.test_points_are_equal_within_threshold.executor": "Run",
+    "PHPUnit.GetDoctorSlotsTest.test_get_doctor_slot_return_a_successful_response.executor": "Run",
+    "PHPUnit.ListDoctorAppointmentsActionTest.test_it_returns_doctor_available_slots.executor": "Run",
+    "PHPUnit.ListDoctorAppointmentsActionTest.test_it_returns_empty_slots.executor": "Run",
+    "PHPUnit.ListDoctorAppointmentsActionTest.test_it_throw_exception_if_doctor_not_found.executor": "Run",
+    "PHPUnit.ListDoctorSlotsControllerTest.test_it_return_list_of_slots_response.executor": "Run",
     "PHPUnit.LoginClientActionTest.executor": "Run",
     "PHPUnit.LoginClientActionTest.test_client_login.executor": "Run",
     "PHPUnit.RegisterClientControllerTest.test_client_register.executor": "Run",
@@ -285,7 +288,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/yazo/SoftwareE/MediAppointment/Modules/Auth/app/DataTransferObjects",
+    "last_opened_file_path": "/home/yazo/SoftwareE/MediAppointment/Modules/Appointment/app/Http/Controllers",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -298,6 +301,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Modules/Appointment/app/Http/Controllers" />
       <recent name="$PROJECT_DIR$/Modules/Auth" />
       <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/Modules/Auth/config" />
@@ -308,38 +312,38 @@
       <recent name="$PROJECT_DIR$/Docker/config/mysql" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.ClientSearchDoctorControllerTest.test_it_search_for_nearest_doctor_by_speciality">
-    <configuration name="ClientLoginControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Modules\Auth\Tests\Unit\ClientLoginControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Auth/tests/Unit/ClientLoginControllerTest.php" scope="Class" />
+  <component name="RunManager" selected="PHPUnit.GetDoctorSlotsTest.test_get_doctor_slot_return_a_successful_response">
+    <configuration name="DoctorScheduleControllerTest.test_create_doctor_unique_doctor_id_and_week_day" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Modules\Appointment\tests\Unit\DoctorScheduleControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Appointment/tests/Unit/DoctorScheduleControllerTest.php" method="test_create_doctor_unique_doctor_id_and_week_day" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ClientSearchDoctorControllerTest.test_it_search_for_nearest_doctor_by_speciality" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Modules\Auth\Tests\Unit\ClientSearchDoctorControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Auth/tests/Unit/ClientSearchDoctorControllerTest.php" method="test_it_search_for_nearest_doctor_by_speciality" scope="Method" />
+    <configuration name="GetDoctorSlotsTest.test_get_doctor_slot_return_a_successful_response" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Feature\GetDoctorSlotsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Appointment/tests/Feature/GetDoctorSlotsTest.php" method="test_get_doctor_slot_return_a_successful_response" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="GeoPointModelTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Modules\Geo\tests\Unit\GeoPointModelTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Geo/tests/Unit/GeoPointModelTest.php" scope="Class" />
+    <configuration name="ListDoctorAppointmentsActionTest.test_it_returns_doctor_available_slots" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Modules\Appointment\Tests\Unit\ListDoctorAppointmentsActionTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Appointment/tests/Unit/ListDoctorAppointmentsActionTest.php" method="test_it_returns_doctor_available_slots" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="GeoPointModelTest.test_get_nearest_models" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Modules\Geo\tests\Unit\GeoPointModelTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Geo/tests/Unit/GeoPointModelTest.php" method="test_get_nearest_models" scope="Method" />
+    <configuration name="ListDoctorAppointmentsActionTest.test_it_returns_empty_slots" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Modules\Appointment\tests\Unit\ListDoctorAppointmentsActionTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Appointment/tests/Unit/ListDoctorAppointmentsActionTest.php" method="test_it_returns_empty_slots" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ListDoctorSlotsControllerTest.test_it_return_list_of_slots_response" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Modules\Appointment\tests\Unit\ListDoctorSlotsControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Appointment/tests/Unit/ListDoctorSlotsControllerTest.php" method="test_it_return_list_of_slots_response" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
-    <configuration name="SearchNearestDoctorActionTest.test_search_nearest_doctor" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Modules\Auth\Tests\Unit\SearchNearestDoctorActionTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Auth/tests/Unit/SearchNearestDoctorActionTest.php" method="test_search_nearest_doctor" scope="Method" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.ClientSearchDoctorControllerTest.test_it_search_for_nearest_doctor_by_speciality" />
-        <item itemvalue="PHPUnit.SearchNearestDoctorActionTest.test_search_nearest_doctor" />
-        <item itemvalue="PHPUnit.ClientLoginControllerTest" />
-        <item itemvalue="PHPUnit.GeoPointModelTest" />
-        <item itemvalue="PHPUnit.GeoPointModelTest.test_get_nearest_models" />
+        <item itemvalue="PHPUnit.GetDoctorSlotsTest.test_get_doctor_slot_return_a_successful_response" />
+        <item itemvalue="PHPUnit.ListDoctorSlotsControllerTest.test_it_return_list_of_slots_response" />
+        <item itemvalue="PHPUnit.DoctorScheduleControllerTest.test_create_doctor_unique_doctor_id_and_week_day" />
+        <item itemvalue="PHPUnit.ListDoctorAppointmentsActionTest.test_it_returns_doctor_available_slots" />
+        <item itemvalue="PHPUnit.ListDoctorAppointmentsActionTest.test_it_returns_empty_slots" />
       </list>
     </recent_temporary>
   </component>
@@ -366,7 +370,7 @@
       <workItem from="1745706046240" duration="1746000" />
       <workItem from="1745763159522" duration="22560000" />
       <workItem from="1745826292098" duration="6474000" />
-      <workItem from="1745954124261" duration="47071000" />
+      <workItem from="1745954124261" duration="55453000" />
     </task>
     <servers />
   </component>
