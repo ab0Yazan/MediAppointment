@@ -203,6 +203,7 @@
       <path value="$PROJECT_DIR$/Modules/Auth/vendor/mobiledetect/mobiledetectlib" />
       <path value="$PROJECT_DIR$/Modules/Auth/vendor/symfony/validator" />
       <path value="$PROJECT_DIR$/Modules/Auth/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/spatie/fork" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

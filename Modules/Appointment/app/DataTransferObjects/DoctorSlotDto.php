@@ -4,7 +4,7 @@ namespace Modules\Appointment\app\DataTransferObjects;
 
 use Carbon\Carbon;
 
-class DoctorSlotDto
+final class DoctorSlotDto
 {
     private int $slotId;
     private string $startTime;

@@ -4,10 +4,13 @@ namespace Modules\Appointment\app\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\Auth\app\Models\Doctor;
+
 // use Modules\Appointment\Database\Factories\SlotFactory;
 
 /**
  * @method static updateOrCreate(array $array, array $array1)
+ * @property true $is_reserved
  */
 class Slot extends Model
 {
@@ -22,4 +25,33 @@ class Slot extends Model
     // {
     //     // return SlotFactory::new();
     // }
+
+    public function doctor(): \Illuminate\Database\Eloquent\Relations\HasOneThrough
+    {
+        return $this->hasOneThrough(
+            Doctor::class,
+            DoctorSchedule::class,
+            'id',
+            'id',
+            'doctor_schedule_id',
+            'doctor_id'
+        );
+    }
+
+    public function isReserved(): bool
+    {
+        return $this->is_reserved;
+    }
+
+    public function reserve(): void
+    {
+        $this->is_reserved = true;
+        $this->save();
+    }
+
+    public static function lockForUpdate(int $slotId)
+    {
+        return self::where('id', $slotId)->lockForUpdate()->firstOrFail();
+    }
+
 }
