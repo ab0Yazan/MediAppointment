@@ -34,8 +34,8 @@ class DoctorAppointmentsGenerateSlotActionTest extends TestCase
             "end_time" => "17:00",
         ];
 
-        $schedule = (new CreateDoctorScheduleAction())->execute( CreateDoctorScheduleDto::fromArray($data));
-        $action = new AppointmentGenerateSlotAction();
+        $schedule = (resolve(CreateDoctorScheduleAction::class))->execute( CreateDoctorScheduleDto::fromArray($data));
+        $action= resolve(AppointmentGenerateSlotAction::class);
         $slots = $action->execute($schedule);
 
         $this->assertNotEmpty($slots, "Appointments should not be empty.");
@@ -81,7 +81,7 @@ class DoctorAppointmentsGenerateSlotActionTest extends TestCase
         ];
 
         //when
-        $schedule = (new CreateDoctorScheduleAction())->execute( CreateDoctorScheduleDto::fromArray($data));
+        $schedule = (resolve(CreateDoctorScheduleAction::class))->execute( CreateDoctorScheduleDto::fromArray($data));
         $listener = new GenerateScheduleSlot();
         $listener->handle(new DoctorScheduleCreated($schedule->id));
 

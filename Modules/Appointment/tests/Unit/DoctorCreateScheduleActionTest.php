@@ -19,7 +19,7 @@ class DoctorCreateScheduleActionTest extends TestCase
     private function createSchedule($data): DoctorSchedule
     {
         $dto = CreateDoctorScheduleDto::fromArray($data);
-        $action = new CreateDoctorScheduleAction();
+        $action = resolve(CreateDoctorScheduleAction::class);
         return $action->execute($dto);
     }
     public function test_create_schedule(): void

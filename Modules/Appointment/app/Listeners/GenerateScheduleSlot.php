@@ -18,6 +18,6 @@ class GenerateScheduleSlot
     {
         $scheduleId = $event->getScheduleId();
         $doctorSchedule = DoctorSchedule::where('id', $scheduleId)->first();
-        (new AppointmentGenerateSlotAction())->execute($doctorSchedule);
+        resolve(AppointmentGenerateSlotAction::class)->execute($doctorSchedule);
     }
 }

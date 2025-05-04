@@ -19,7 +19,7 @@ class ReserveAnAppointmentActionTest extends TestCase
         $client= $this->createClient();
         $doctor= $this->createDoctorAndSchedule();
         $slot = Slot::first();
-        $action = new ReserveSlotAction();
+        $action = resolve(ReserveSlotAction::class);
         $reservationDto= $action->execute($slot->id, $client);
         $this->assertInstanceOf(ReservationDto::class, $reservationDto);
         $this->assertTrue($slot->fresh()->isReserved());
@@ -48,7 +48,7 @@ class ReserveAnAppointmentActionTest extends TestCase
 //    private function attemptReservation(int $slotId, int $clientId): void
 //    {
 //        $client = Client::find($clientId);
-//        $action = new ReserveSlotAction();
+//        $action = resolve(ReserveSlotAction::class);
 //
 //        try {
 //            $action->execute($slotId, $client);

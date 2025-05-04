@@ -21,7 +21,7 @@ class ListDoctorAppointmentsActionTest extends TestCase
     {
         $doctor = $this->createDoctor();
 
-        $action = new GetDoctorSlotsAction();
+        $action = resolve(GetDoctorSlotsAction::class);
 
         $slots = $action->execute($doctor->id);
 
@@ -39,21 +39,21 @@ class ListDoctorAppointmentsActionTest extends TestCase
     {
         $doctor = $this->createDoctor();
 
-        (new CreateDoctorScheduleAction())->execute(CreateDoctorScheduleDto::fromArray([
+        (resolve(CreateDoctorScheduleAction::class))->execute(CreateDoctorScheduleDto::fromArray([
             "doctor_id" => $doctor->id,
             "week_day" => WeekDay::SUN,
             "start_time" => "09:00",
             "end_time" => "17:00",
         ]));
 
-        (new CreateDoctorScheduleAction())->execute(CreateDoctorScheduleDto::fromArray([
+        (resolve(CreateDoctorScheduleAction::class))->execute(CreateDoctorScheduleDto::fromArray([
             "doctor_id" => $doctor->id,
             "week_day" => WeekDay::THU,
             "start_time" => "09:00",
             "end_time" => "17:00",
         ]));
 
-        $action = new GetDoctorSlotsAction();
+        $action = resolve(GetDoctorSlotsAction::class);
         $slots = $action->execute($doctor->id);
         $this->assertInstanceOf(Collection::class ,$slots);
         $this->assertTrue($slots->isNotEmpty());
@@ -64,14 +64,14 @@ class ListDoctorAppointmentsActionTest extends TestCase
     {
         $doctor = $this->createDoctor();
 
-        (new CreateDoctorScheduleAction())->execute(CreateDoctorScheduleDto::fromArray([
+        (resolve(CreateDoctorScheduleAction::class))->execute(CreateDoctorScheduleDto::fromArray([
             "doctor_id" => $doctor->id,
             "week_day" => WeekDay::SUN,
             "start_time" => "09:00",
             "end_time" => "17:00",
         ]));
 
-        (new CreateDoctorScheduleAction())->execute(CreateDoctorScheduleDto::fromArray([
+        (resolve(CreateDoctorScheduleAction::class))->execute(CreateDoctorScheduleDto::fromArray([
             "doctor_id" => $doctor->id,
             "week_day" => WeekDay::THU,
             "start_time" => "09:00",
@@ -81,7 +81,7 @@ class ListDoctorAppointmentsActionTest extends TestCase
 
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage("invalid doctor id");
-        $action = new GetDoctorSlotsAction();
+        $action = resolve(GetDoctorSlotsAction::class);
         $slots = $action->execute(55); // no doctor with id 55
 
     }

@@ -25,7 +25,7 @@ class ReserveSlotControllerTest extends TestCase
         Sanctum::actingAs($client1);
 
         $controller = new ReserveSlotsController();
-        $action= new ReserveSlotAction();
+        $action= resolve(ReserveSlotAction::class);
         $controller->__invoke($slot, $action);
         $this->assertDatabaseHas('reservations', ['id' => 1, 'client_id' => $client1->id, 'slot_id' => $slot->id]);
         $this->assertDatabaseCount('reservations', 1);

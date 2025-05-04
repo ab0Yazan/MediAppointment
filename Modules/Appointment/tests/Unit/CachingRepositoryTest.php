@@ -14,6 +14,7 @@ class CachingRepositoryTest extends TestCase
 
     public function test_it_actually_caches_results()
     {
+
         $this->createDoctorAndSchedule();
 
         // First call - should hit database

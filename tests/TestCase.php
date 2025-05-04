@@ -27,14 +27,14 @@ abstract class TestCase extends BaseTestCase
     {
         $doctor= $this->createDoctor();
 
-        (new CreateDoctorScheduleAction())->execute(CreateDoctorScheduleDto::fromArray([
+        (resolve(CreateDoctorScheduleAction::class))->execute(CreateDoctorScheduleDto::fromArray([
             "doctor_id" => $doctor->id,
-            "week_day" => WeekDay::SUN,
+            "week_day" => WeekDay::TUE,
             "start_time" => "09:00",
             "end_time" => "17:00",
         ]));
 
-        (new CreateDoctorScheduleAction())->execute(CreateDoctorScheduleDto::fromArray([
+        (resolve(CreateDoctorScheduleAction::class))->execute(CreateDoctorScheduleDto::fromArray([
             "doctor_id" => $doctor->id,
             "week_day" => WeekDay::THU,
             "start_time" => "09:00",

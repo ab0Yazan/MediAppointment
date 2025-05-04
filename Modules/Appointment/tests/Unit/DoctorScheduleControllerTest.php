@@ -33,7 +33,7 @@ class DoctorScheduleControllerTest extends TestCase
         ];
         $request = new CreateDoctorScheduleRequest($data);
         $controller = new DoctorScheduleController();
-        $action = new CreateDoctorScheduleAction();
+        $action = resolve(CreateDoctorScheduleAction::class);
         $response = $controller->create($request, $action);
         self::assertTrue($response->isSuccessful());
         $this->assertDatabaseHas("doctor_schedules", $data);
@@ -59,7 +59,7 @@ class DoctorScheduleControllerTest extends TestCase
         $this->assertArrayHasKey('end_time', $validator->errors()->toArray());
 
         $controller = new DoctorScheduleController();
-        $action = new CreateDoctorScheduleAction();
+        $action = resolve(CreateDoctorScheduleAction::class);
         $controller->create($request, $action);
         $this->assertDatabaseHas("doctor_schedules", $data);
     }
@@ -80,7 +80,7 @@ class DoctorScheduleControllerTest extends TestCase
         $request->merge($data);
 
         $controller = new DoctorScheduleController();
-        $action = new CreateDoctorScheduleAction();
+        $action = resolve(CreateDoctorScheduleAction::class);
         $controller->create($request, $action);
 
         //create same doctor_id, week_day

@@ -4,11 +4,16 @@ namespace Modules\Appointment\app\Actions;
 
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
-use Illuminate\Support\Facades\DB;
 use Modules\Appointment\app\Models\DoctorSchedule;
+use Modules\Appointment\app\Repositories\Contracts\SlotRepositoryInterface;
 
 final class AppointmentGenerateSlotAction
 {
+    private SlotRepositoryInterface $repo;
+    public function __construct(SlotRepositoryInterface $repo)
+    {
+        $this->repo = $repo;
+    }
     public function execute(DoctorSchedule $schedule, $slot_minutes=30)
     {
         $start = Carbon::createFromFormat('H:i', $schedule->start_time);
@@ -29,9 +34,8 @@ final class AppointmentGenerateSlotAction
             $slots[] = ['doctor_schedule_id' => $schedule->id,'start_time' => $start, 'end_time' => $end, 'week_day' => $week_day, 'date' => $date];
         }
 
-        DB::table('slots')->insert($slots);
-
-        $schedule->with('slots');
+        $this->repo->bulkInsert($slots);
+        $this->repo->findBy(['doctor_schedule_id' => $schedule->id]);
 
         return $schedule->slots;
     }
