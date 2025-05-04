@@ -1,19 +1,10 @@
-name: Laravel Tests with Redis
+name: Laravel CI
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
-env:
-  DB_CONNECTION: mysql
-  DB_DATABASE: laravel_test
-  DB_USERNAME: root
-  DB_PASSWORD: secret
-  CACHE_DRIVER: redis
-  REDIS_HOST: 127.0.0.1
-  REDIS_PORT: 6379
 
 jobs:
   test:
@@ -24,8 +15,8 @@ jobs:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: secret
-          MYSQL_DATABASE: laravel_test
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: test
         ports:
           - 3306:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
@@ -35,15 +26,16 @@ jobs:
         ports:
           - 6379:6379
         options: --health-cmd="redis-cli ping" --health-interval=10s --health-timeout=5s --health-retries=3
+      
+      mailhog:
+        image: mailhog/mailhog
+        ports:
+          - 1025:1025 # SMTP
+          - 8025:8025 # Web UI
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Setup PHP and Redis tools
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y redis-tools
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -52,6 +44,11 @@ jobs:
           extensions: mbstring, ctype, fileinfo, dom, curl, pdo, mysql, bcmath, gd, imagick, redis
           coverage: pcov
           ini-values: memory_limit=2G
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y redis-tools
 
       - name: Validate composer.json
         run: composer validate --strict
@@ -67,18 +64,20 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
-
-      - name: Generate app key
-        run: php artisan key:generate --env=testing
-
-      - name: Clear caches
+      - name: Prepare environment
         run: |
-          php artisan config:clear --env=testing
-          php artisan config:cache --env=testing
-          php artisan cache:clear --env=testing
+          cp .env.testing .env
+          php artisan key:generate
+          php artisan cache:table
+          php artisan session:table
 
       - name: Run migrations
-        run: php artisan migrate:fresh --env=testing --force
+        run: |
+          php artisan migrate:fresh --force
+          php artisan cache:clear
+          php artisan config:clear
+          php artisan view:clear
 
       - name: Run tests
-        run: php artisan test --env=testing 
+        run: php artisan test
+
