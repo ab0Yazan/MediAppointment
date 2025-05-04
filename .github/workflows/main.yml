@@ -2,9 +2,9 @@ name: Laravel Tests with Redis
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ main ]
 
 env:
   DB_CONNECTION: mysql
@@ -39,6 +39,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Setup PHP and Redis tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y redis-tools
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -76,18 +81,14 @@ jobs:
       - name: Generate app key
         run: php artisan key:generate --env=testing
 
-      - name: Clear and cache config
+      - name: Clear caches
         run: |
           php artisan config:clear --env=testing
           php artisan config:cache --env=testing
+          php artisan cache:clear --env=testing
 
       - name: Run migrations
         run: php artisan migrate:fresh --env=testing --force
 
-      - name: Clear Redis before tests
-        run: |
-          php artisan cache:clear --env=testing
-          redis-cli -h 127.0.0.1 FLUSHALL
-
       - name: Run tests
-        run: php artisan test --env=testing
+        run: php artisan test --env=testing 
