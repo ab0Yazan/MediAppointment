@@ -67,16 +67,6 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
-      - name: Prepare environment
-        run: |
-          cp .env.example .env.testing
-          echo "APP_ENV=testing" >> .env.testing
-          echo "APP_KEY=base64:$(openssl rand -base64 32)" >> .env.testing
-          echo "CACHE_DRIVER=redis" >> .env.testing
-          echo "REDIS_HOST=127.0.0.1" >> .env.testing
-          echo "REDIS_PORT=6379" >> .env.testing
-          echo "SESSION_DRIVER=redis" >> .env.testing
-          echo "QUEUE_CONNECTION=redis" >> .env.testing
 
       - name: Generate app key
         run: php artisan key:generate --env=testing
