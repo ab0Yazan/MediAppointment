@@ -15,7 +15,10 @@ class MessageCreated
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
     public MessageDto $messageDto;
+    public readonly string $event;
+
     public function __construct(MessageDto $messageDto) {
         $this->messageDto = $messageDto;
+        $this->event = "MessageCreated";
     }
 }

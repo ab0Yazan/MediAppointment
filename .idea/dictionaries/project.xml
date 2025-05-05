@@ -2,6 +2,7 @@
   <dictionary name="project">
     <words>
       <w>mailhog</w>
+      <w>rbmq</w>
     </words>
   </dictionary>
 </component>

@@ -10,3 +10,7 @@ Artisan::command('inspire', function () {
 Artisan::command('slots:generate', function () {
     $this->call(\Modules\Appointment\app\Console\GenerateDoctorSlots::class);
 })->describe('Generate doctor time slots');
+
+Artisan::command('rabbitmq:consume-notification', function () {
+    $this->call(resolve(\Modules\Notification\Console\ConsumeNotificationCommand::class));
+})->describe('consuming notifications');

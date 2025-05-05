@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/Modules/Auth/tests" />
         <option value="$PROJECT_DIR$/tests" />
         <option value="$PROJECT_DIR$/Modules/Geo/tests" />
+        <option value="$PROJECT_DIR$/Modules/Chat/tests" />
         <option value="$PROJECT_DIR$/Modules/Appointment/tests" />
       </list>
     </option>

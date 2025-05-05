@@ -2,5 +2,6 @@
     "Auth": true,
     "Appointment": true,
     "Geo": true,
-    "Chat": true
+    "Chat": true,
+    "Notification": true
 }

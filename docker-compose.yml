@@ -43,3 +43,18 @@ services:
         ports:
             - "6379:6379"
 
+    rabbitmq:
+        image: rabbitmq:3.11-management
+        container_name: rabbitmq
+        ports:
+            - "5672:5672"  # server port
+            - "15672:15672"  # UI port
+        environment:
+            RABBITMQ_DEFAULT_USER: admin
+            RABBITMQ_DEFAULT_PASS: admin
+        volumes:
+            - rabbitmq-data:/var/lib/rabbitmq
+
+
+volumes:
+    rabbitmq-data:

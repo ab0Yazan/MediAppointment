@@ -30,3 +30,4 @@ Homestead.json
 auth.json
 mysqldata
 socketServer
+rabbitmq-data

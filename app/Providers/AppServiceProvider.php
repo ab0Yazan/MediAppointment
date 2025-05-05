@@ -12,6 +12,11 @@ use Modules\Auth\app\Repositories\DoctorCacheRepository;
 use Modules\Auth\app\Repositories\DoctorEloquentRepository;
 use Modules\Appointment\Providers\RepositoryServiceProvider;
 use Modules\Auth\app\Models\Doctor;
+use Modules\Notification\Console\ConsumeNotificationCommand;
+use Modules\Shared\src\Contracts\MessageQueueInterface;
+use Modules\Shared\src\RabbitMQService;
+use PhpAmqpLib\Connection\AMQPStreamConnection;
+use PhpAmqpLib\Message\AMQPMessage;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,6 +37,27 @@ class AppServiceProvider extends ServiceProvider
                 new ReservationEloquentRepository(new Reservation()),
                 $app->make('cache.store')
             );
+        });
+
+        $this->app->bind(AMQPStreamConnection::class, function ($app) {
+            try {
+                return new AMQPStreamConnection(
+                    env('RABBITMQ_HOST'),
+                    env('RABBITMQ_PORT'),
+                    env('RABBITMQ_USER'),
+                    env('RABBITMQ_PASSWORD')
+                );
+            } catch (\Exception $e) {
+                throw new \Exception("AMQPStreamConnection Error" . $e->getMessage());
+            }
+        });
+
+        $this->app->bind(MessageQueueInterface::class, function ($app) {
+           resolve(RabbitmqService::class);
+        });
+
+        $this->app->bind(ConsumeNotificationCommand::class, function ($app) {
+            return new ConsumeNotificationCommand(resolve(RabbitmqService::class));
         });
     }
 
