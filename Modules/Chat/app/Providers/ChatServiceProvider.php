@@ -4,6 +4,14 @@ namespace Modules\Chat\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Modules\Chat\app\Repositories\Contracts\ConversationRepositoryInterface;
+use Modules\Chat\app\Repositories\Contracts\MessageRepositoryInterface;
+use Modules\Chat\app\Repositories\ConversationCacheRepository;
+use Modules\Chat\app\Repositories\ConversationEloquentRepository;
+use Modules\Chat\app\Repositories\MessageCacheRepository;
+use Modules\Chat\app\Repositories\MessageEloquentRepository;
+use Modules\Chat\Models\Conversation;
+use Modules\Chat\Models\Message;
 use Nwidart\Modules\Traits\PathNamespace;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
@@ -36,6 +44,19 @@ class ChatServiceProvider extends ServiceProvider
     {
         $this->app->register(EventServiceProvider::class);
         $this->app->register(RouteServiceProvider::class);
+        $this->app->bind(MessageRepositoryInterface::class, function () {
+            return new MessageCacheRepository(
+                new MessageEloquentRepository(new Message()),
+                resolve('cache.store')
+            );
+        });
+
+        $this->app->bind(ConversationRepositoryInterface::class, function () {
+            return new ConversationCacheRepository(
+                new ConversationEloquentRepository(new Conversation()),
+                resolve('cache.store')
+            );
+        });
     }
 
     /**

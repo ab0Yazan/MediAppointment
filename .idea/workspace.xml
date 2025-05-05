@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b07a5b6e-8d29-464c-8b5a-6fa3863ef54f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Modules/Chat/Traits/HasChat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Chat/app/Actions/CreateMessageAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Chat/app/DataTransferObjects/CreateMessageDto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Chat/app/DataTransferObjects/MessageDto.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Chat/app/Repositories/Contracts/ConversationRepositoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Chat/app/Repositories/Contracts/MessageRepositoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Chat/app/Repositories/ConversationCacheRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Chat/app/Repositories/ConversationEloquentRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Chat/app/Repositories/MessageCacheRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Chat/app/Repositories/MessageEloquentRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Auth/app/Models/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/app/Models/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Auth/app/Models/Doctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Auth/app/Models/Doctor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules_statuses.json" beforeDir="false" afterPath="$PROJECT_DIR$/modules_statuses.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Chat/app/Models/Conversation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Chat/app/Models/Conversation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Chat/app/Models/Message.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Chat/app/Models/Message.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Chat/app/Models/Participant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Chat/app/Models/Participant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Chat/app/Providers/ChatServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Chat/app/Providers/ChatServiceProvider.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,6 +268,9 @@
     "PHPUnit.CreateDoctorScheduleRequestTest.test_create_doctor__valid_request.executor": "Run",
     "PHPUnit.CreateDoctorScheduleRequestTest.test_create_doctor_invalid_request.executor": "Run",
     "PHPUnit.CreateDoctorScheduleRequestTest.test_create_doctor_unique_doctor_id_and_week_day_request.executor": "Run",
+    "PHPUnit.CreateMessageActionTest.executor": "Run",
+    "PHPUnit.CreateMessageActionTest.test_send_message_action.executor": "Run",
+    "PHPUnit.CreateMessageActionTest.test_send_message_action_first_conversation_init.executor": "Run",
     "PHPUnit.DoctorAppointmentsGenerateActionTest.test_generate_appointments_action.executor": "Run",
     "PHPUnit.DoctorAppointmentsGenerateSlotActionTest.executor": "Run",
     "PHPUnit.DoctorAppointmentsGenerateSlotActionTest.test_generate_appointments_action.executor": "Run",
@@ -325,21 +335,21 @@
       <recent name="$PROJECT_DIR$/Docker/config/mysql" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.ListDoctorAppointmentsActionTest.test_it_returns_empty_slots">
-    <configuration name="CachingRepositoryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Modules\Appointment\Tests\Unit\CachingRepositoryTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Appointment/tests/Unit/CachingRepositoryTest.php" scope="Class" />
-      <method v="2" />
-    </configuration>
-    <configuration name="CachingRepositoryTest.test_all_method_with_caching" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Modules\Appointment\tests\Unit\CachingRepositoryTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Appointment/tests/Unit/CachingRepositoryTest.php" method="test_all_method_with_caching" scope="Method" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="PHPUnit.CreateMessageActionTest.test_send_message_action_first_conversation_init">
     <configuration name="CachingRepositoryTest.test_it_actually_caches_results" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Modules\Appointment\tests\Unit\CachingRepositoryTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Appointment/tests/Unit/CachingRepositoryTest.php" method="test_it_actually_caches_results" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="CachingRepositoryTest.test_it_create_slot_repo" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Modules\Appointment\tests\Unit\CachingRepositoryTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Appointment/tests/Unit/CachingRepositoryTest.php" method="test_it_create_slot_repo" scope="Method" />
+    <configuration name="CreateMessageActionTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Modules\Chat\Tests\Unit\CreateMessageActionTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Chat/tests/Unit/CreateMessageActionTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CreateMessageActionTest.test_send_message_action" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Modules\Chat\Tests\Unit\CreateMessageActionTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Chat/tests/Unit/CreateMessageActionTest.php" method="test_send_message_action" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CreateMessageActionTest.test_send_message_action_first_conversation_init" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Modules\Chat\Tests\Unit\CreateMessageActionTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/Modules/Chat/tests/Unit/CreateMessageActionTest.php" method="test_send_message_action_first_conversation_init" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="ListDoctorAppointmentsActionTest.test_it_returns_empty_slots" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -352,11 +362,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.CreateMessageActionTest.test_send_message_action_first_conversation_init" />
+        <item itemvalue="PHPUnit.CreateMessageActionTest.test_send_message_action" />
+        <item itemvalue="PHPUnit.CreateMessageActionTest" />
         <item itemvalue="PHPUnit.ListDoctorAppointmentsActionTest.test_it_returns_empty_slots" />
         <item itemvalue="PHPUnit.CachingRepositoryTest.test_it_actually_caches_results" />
-        <item itemvalue="PHPUnit.CachingRepositoryTest.test_it_create_slot_repo" />
-        <item itemvalue="PHPUnit.CachingRepositoryTest" />
-        <item itemvalue="PHPUnit.CachingRepositoryTest.test_all_method_with_caching" />
       </list>
     </recent_temporary>
   </component>

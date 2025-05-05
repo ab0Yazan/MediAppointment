@@ -13,7 +13,7 @@ class Conversation extends Model
     /**
      * The attributes that are mass assignable.
      */
-    protected $fillable = [];
+    protected $fillable = ['title', 'creator_id', 'creator_type'];
 
     // protected static function newFactory(): ConversationFactory
     // {

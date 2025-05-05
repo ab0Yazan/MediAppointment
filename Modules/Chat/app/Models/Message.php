@@ -13,7 +13,7 @@ class Message extends Model
     /**
      * The attributes that are mass assignable.
      */
-    protected $fillable = [];
+    protected $fillable = ['content', 'conversation_id', 'sender_id', 'sender_type'];
 
     // protected static function newFactory(): MessageFactory
     // {

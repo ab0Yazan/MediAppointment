@@ -13,7 +13,7 @@ class Participant extends Model
     /**
      * The attributes that are mass assignable.
      */
-    protected $fillable = [];
+    protected $fillable = ['participable_id','participable_type'];
 
     // protected static function newFactory(): ParticipantFactory
     // {
