@@ -1,5 +1,6 @@
 {
     "Auth": true,
     "Appointment": true,
-    "Geo": true
+    "Geo": true,
+    "Chat": true
 }

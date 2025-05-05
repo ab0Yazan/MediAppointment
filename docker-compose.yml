@@ -36,4 +36,10 @@ services:
 
         command: >
             sh -c "adduser --disabled-password --gecos '' sail &&
+
                     php-fpm"
+    redis:
+        image: redis:latest
+        ports:
+            - "6379:6379"
+
