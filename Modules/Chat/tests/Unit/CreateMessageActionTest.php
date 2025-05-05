@@ -14,7 +14,7 @@ class CreateMessageActionTest extends TestCase
     use RefreshDatabase;
     public function test_send_message_action_first_conversation_init(): void
     {
-//        \Event::fake();
+        \Event::fake();
 
         $doctor = $this->createDoctor();
 
@@ -32,7 +32,7 @@ class CreateMessageActionTest extends TestCase
         $action = resolve(CreateMessageAction::class);
         $messageDto= $action->execute($dto, $sender, $receiver);
 
-//        \Event::assertDispatched(MessageCreated::class);
+        \Event::assertDispatched(MessageCreated::class);
 
         $this->assertDatabaseHas('messages', [
             'id' => $messageDto->messageId,
