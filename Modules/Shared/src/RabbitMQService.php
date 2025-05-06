@@ -39,6 +39,16 @@ class RabbitMQService implements MessageQueueInterface
         }
     }
 
+    public function isConsuming(): bool
+    {
+        return $this->channel->is_consuming();
+    }
+
+    public function wait(): void
+    {
+        $this->channel->wait();
+    }
+
     /**
      * @throws Exception
      */

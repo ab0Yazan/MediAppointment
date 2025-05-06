@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b07a5b6e-8d29-464c-8b5a-6fa3863ef54f" name="Changes" comment="" />
+    <list default="true" id="b07a5b6e-8d29-464c-8b5a-6fa3863ef54f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Chat/app/Http/Controllers/ChatController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Chat/app/Http/Controllers/ChatController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Chat/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Chat/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Notification/app/Console/ConsumeNotificationCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Notification/app/Console/ConsumeNotificationCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Shared/src/Contracts/MessageQueueInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Shared/src/Contracts/MessageQueueInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Shared/src/RabbitMQService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Shared/src/RabbitMQService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/providers.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/providers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -221,6 +236,24 @@
       <path value="$PROJECT_DIR$/vendor/php-amqplib/php-amqplib" />
       <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/vendor/laravel/reverb" />
+      <path value="$PROJECT_DIR$/vendor/pusher/pusher-php-server" />
+      <path value="$PROJECT_DIR$/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/vendor/react/promise-timer" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/react/cache" />
+      <path value="$PROJECT_DIR$/vendor/clue/redis-react" />
+      <path value="$PROJECT_DIR$/vendor/clue/redis-protocol" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
+      <path value="$PROJECT_DIR$/vendor/ratchet/rfc6455" />
+      <path value="$PROJECT_DIR$/vendor/laravel/telescope" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/vendor/laravel/pulse" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -238,78 +271,78 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "PHPUnit.CachingRepositoryTest.executor": "Run",
-    "PHPUnit.CachingRepositoryTest.test_all_method_caches_results.executor": "Run",
-    "PHPUnit.CachingRepositoryTest.test_all_method_with_caching.executor": "Run",
-    "PHPUnit.CachingRepositoryTest.test_cache_hit_for_all_method.executor": "Run",
-    "PHPUnit.CachingRepositoryTest.test_it_actually_caches_results.executor": "Run",
-    "PHPUnit.CachingRepositoryTest.test_it_create_slot_repo.executor": "Run",
-    "PHPUnit.ClientLoginControllerTest.executor": "Run",
-    "PHPUnit.ClientLoginControllerTest.test_login.executor": "Run",
-    "PHPUnit.ClientLoginFeatureTest.executor": "Run",
-    "PHPUnit.ClientRegisterFeatureTest.test_it_register_client_invalid_request.executor": "Run",
-    "PHPUnit.ClientRegisterFeatureTest.test_it_register_client_valid_request.executor": "Run",
-    "PHPUnit.ClientSearchDoctorControllerTest.test_it_search_for_nearest_doctor_by_speciality.executor": "Run",
-    "PHPUnit.CreateDoctorScheduleRequestTest.test_create_doctor__valid_request.executor": "Run",
-    "PHPUnit.CreateDoctorScheduleRequestTest.test_create_doctor_invalid_request.executor": "Run",
-    "PHPUnit.CreateDoctorScheduleRequestTest.test_create_doctor_unique_doctor_id_and_week_day_request.executor": "Run",
-    "PHPUnit.CreateMessageActionTest.executor": "Run",
-    "PHPUnit.CreateMessageActionTest.test_send_message_action.executor": "Run",
-    "PHPUnit.CreateMessageActionTest.test_send_message_action_first_conversation_init.executor": "Run",
-    "PHPUnit.DoctorAppointmentsGenerateActionTest.test_generate_appointments_action.executor": "Run",
-    "PHPUnit.DoctorAppointmentsGenerateSlotActionTest.executor": "Run",
-    "PHPUnit.DoctorAppointmentsGenerateSlotActionTest.test_generate_appointments_action.executor": "Run",
-    "PHPUnit.DoctorAppointmentsGenerateSlotActionTest.test_listener_generate_schedule_slots.executor": "Run",
-    "PHPUnit.DoctorCreateScheduleActionTest.executor": "Run",
-    "PHPUnit.DoctorCreateScheduleActionTest.test_create_schedule.executor": "Run",
-    "PHPUnit.DoctorCreateScheduleActionTest.test_unique_doctor_id_and_week_day.executor": "Run",
-    "PHPUnit.DoctorModelTest.test_doctor_create_geo_point.executor": "Run",
-    "PHPUnit.DoctorScheduleControllerTest.executor": "Run",
-    "PHPUnit.DoctorScheduleControllerTest.test_create_doctor_schedule.executor": "Run",
-    "PHPUnit.DoctorScheduleControllerTest.test_create_doctor_schedule_invalid_body.executor": "Run",
-    "PHPUnit.DoctorScheduleControllerTest.test_create_doctor_unique_doctor_id_and_week_day.executor": "Run",
-    "PHPUnit.DoctorScheduleCreateTest.test_create_doctor_schedule_return_a_successful_response.executor": "Run",
-    "PHPUnit.GeoPointModelTest.executor": "Run",
-    "PHPUnit.GeoPointModelTest.test_geo_point_model_columns.executor": "Run",
-    "PHPUnit.GeoPointModelTest.test_geo_point_model_unique.executor": "Run",
-    "PHPUnit.GeoPointModelTest.test_get_nearest_models.executor": "Run",
-    "PHPUnit.GeoPointTest (1).executor": "Run",
-    "PHPUnit.GeoPointTest.executor": "Run",
-    "PHPUnit.GeoPointTest.test_geo_point_creation.executor": "Run",
-    "PHPUnit.GeoPointTest.test_get_distance_from_other_point.executor": "Run",
-    "PHPUnit.GeoPointTest.test_points_are_equal_within_threshold.executor": "Run",
-    "PHPUnit.GetDoctorSlotsTest.test_get_doctor_slot_return_a_successful_response.executor": "Run",
-    "PHPUnit.ListDoctorAppointmentsActionTest.test_it_returns_doctor_available_slots.executor": "Run",
-    "PHPUnit.ListDoctorAppointmentsActionTest.test_it_returns_empty_slots.executor": "Run",
-    "PHPUnit.ListDoctorAppointmentsActionTest.test_it_throw_exception_if_doctor_not_found.executor": "Run",
-    "PHPUnit.ListDoctorSlotsControllerTest.test_it_return_list_of_slots_response.executor": "Run",
-    "PHPUnit.LoginClientActionTest.executor": "Run",
-    "PHPUnit.LoginClientActionTest.test_client_login.executor": "Run",
-    "PHPUnit.RegisterClientControllerTest.test_client_register.executor": "Run",
-    "PHPUnit.ReserveAnAppointmentActionTest.executor": "Run",
-    "PHPUnit.ReserveAnAppointmentActionTest.test_concurrent_reservation_should_only_create_one.executor": "Run",
-    "PHPUnit.ReserveAnAppointmentActionTest.test_it_reserve_an_appointment.executor": "Run",
-    "PHPUnit.ReserveDoctorSlotsTest.test_get_doctor_slot_return_a_successful_response.executor": "Run",
-    "PHPUnit.ReserveSlotControllerTest.test_that_true_is_true.executor": "Run",
-    "PHPUnit.SearchNearestDoctorActionTest.test_search_nearest_doctor.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/yazo/SoftwareE/MediAppointment/Modules/Auth/app",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "php.override.implement.member.chooser.php.doc": "NONE",
-    "settings.editor.selected.configurable": "preferences.editor",
-    "ts.external.directory.path": "/opt/phpstorm/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;PHPUnit.CachingRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.CachingRepositoryTest.test_all_method_caches_results.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.CachingRepositoryTest.test_all_method_with_caching.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.CachingRepositoryTest.test_cache_hit_for_all_method.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.CachingRepositoryTest.test_it_actually_caches_results.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.CachingRepositoryTest.test_it_create_slot_repo.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ClientLoginControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ClientLoginControllerTest.test_login.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ClientLoginFeatureTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ClientRegisterFeatureTest.test_it_register_client_invalid_request.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ClientRegisterFeatureTest.test_it_register_client_valid_request.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ClientSearchDoctorControllerTest.test_it_search_for_nearest_doctor_by_speciality.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.CreateDoctorScheduleRequestTest.test_create_doctor__valid_request.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.CreateDoctorScheduleRequestTest.test_create_doctor_invalid_request.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.CreateDoctorScheduleRequestTest.test_create_doctor_unique_doctor_id_and_week_day_request.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.CreateMessageActionTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.CreateMessageActionTest.test_send_message_action.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.CreateMessageActionTest.test_send_message_action_first_conversation_init.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.DoctorAppointmentsGenerateActionTest.test_generate_appointments_action.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.DoctorAppointmentsGenerateSlotActionTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.DoctorAppointmentsGenerateSlotActionTest.test_generate_appointments_action.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.DoctorAppointmentsGenerateSlotActionTest.test_listener_generate_schedule_slots.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.DoctorCreateScheduleActionTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.DoctorCreateScheduleActionTest.test_create_schedule.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.DoctorCreateScheduleActionTest.test_unique_doctor_id_and_week_day.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.DoctorModelTest.test_doctor_create_geo_point.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.DoctorScheduleControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.DoctorScheduleControllerTest.test_create_doctor_schedule.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.DoctorScheduleControllerTest.test_create_doctor_schedule_invalid_body.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.DoctorScheduleControllerTest.test_create_doctor_unique_doctor_id_and_week_day.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.DoctorScheduleCreateTest.test_create_doctor_schedule_return_a_successful_response.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.GeoPointModelTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.GeoPointModelTest.test_geo_point_model_columns.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.GeoPointModelTest.test_geo_point_model_unique.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.GeoPointModelTest.test_get_nearest_models.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.GeoPointTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.GeoPointTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.GeoPointTest.test_geo_point_creation.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.GeoPointTest.test_get_distance_from_other_point.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.GeoPointTest.test_points_are_equal_within_threshold.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.GetDoctorSlotsTest.test_get_doctor_slot_return_a_successful_response.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ListDoctorAppointmentsActionTest.test_it_returns_doctor_available_slots.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ListDoctorAppointmentsActionTest.test_it_returns_empty_slots.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ListDoctorAppointmentsActionTest.test_it_throw_exception_if_doctor_not_found.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ListDoctorSlotsControllerTest.test_it_return_list_of_slots_response.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.LoginClientActionTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.LoginClientActionTest.test_client_login.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.RegisterClientControllerTest.test_client_register.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ReserveAnAppointmentActionTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ReserveAnAppointmentActionTest.test_concurrent_reservation_should_only_create_one.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ReserveAnAppointmentActionTest.test_it_reserve_an_appointment.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ReserveDoctorSlotsTest.test_get_doctor_slot_return_a_successful_response.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.ReserveSlotControllerTest.test_that_true_is_true.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.SearchNearestDoctorActionTest.test_search_nearest_doctor.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/yazo/SoftwareE/MediAppointment/Modules/Auth/app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/opt/phpstorm/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Modules/Auth/app" />

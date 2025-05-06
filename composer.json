@@ -10,7 +10,10 @@
         "doctrine/annotations": "^2.0",
         "doctrine/cache": "^2.2",
         "laravel/framework": "^12.0",
+        "laravel/pulse": "^1.4",
+        "laravel/reverb": "^1.5",
         "laravel/sanctum": "^4.1",
+        "laravel/telescope": "^5.7",
         "laravel/tinker": "^2.10.1",
         "nwidart/laravel-modules": "^12.0",
         "php-amqplib/php-amqplib": "^3.7",
@@ -84,7 +87,8 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true,
-            "wikimedia/composer-merge-plugin": true
+            "wikimedia/composer-merge-plugin": true,
+            "composer/installers": true
         }
     },
     "minimum-stability": "stable",

@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/Modules/Geo/tests" />
         <option value="$PROJECT_DIR$/Modules/Chat/tests" />
         <option value="$PROJECT_DIR$/Modules/Appointment/tests" />
+        <option value="$PROJECT_DIR$/Modules/Notification/tests" />
       </list>
     </option>
   </component>

@@ -3,6 +3,7 @@
 namespace Modules\Notification\Console;
 
 use Illuminate\Console\Command;
+use Modules\Notification\Events\ChatMessageSent;
 use Modules\Shared\src\Contracts\MessageQueueInterface;
 
 final class ConsumeNotificationCommand extends Command
@@ -20,15 +21,21 @@ final class ConsumeNotificationCommand extends Command
     }
 
 
-    public function handle() {
+    public function handle()
+    {
         $this->info('listening........');
-        $this->rbmq->consume('real_time', function($msg){
-            $data= json_decode($msg->body, true);
-            echo $data['event'];
+        $this->rbmq->consume('real_time', function ($msg) {
+            $data = json_decode($msg->body, true);
 
-            //send notification
-
+            switch ($data['event']) {
+                case 'MessageCreated':
+                    broadcast(new ChatMessageSent($data));
+                    break;
+                default:
+                    throw new \Exception('Unexpected event');
+            }
             $this->info("Processed");
         });
+
     }
 }

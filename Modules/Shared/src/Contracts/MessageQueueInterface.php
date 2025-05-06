@@ -7,4 +7,7 @@ interface MessageQueueInterface
     public function publish(string $message, string $queue) : void;
     public function consume(string $queue, callable $callback) : void;
     public function __destruct();
+
+    public function isConsuming();
+    public function wait();
 }
