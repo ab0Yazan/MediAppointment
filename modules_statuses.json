@@ -3,5 +3,6 @@
     "Appointment": true,
     "Geo": true,
     "Chat": true,
-    "Notification": true
+    "Notification": true,
+    "Storage": true
 }
